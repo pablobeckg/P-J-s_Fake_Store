@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Fake Store</title>
+  </head>
+  <body>
+    <header>
+      <h1>P&J's Fake Store</h1>
+      <nav>
+        <div class="search">
+          <input id="search-field" type="text" placeholder="Search by title ">
+          <select name="" id="sort-by">
+            <option value="">Sort by</option>
+            <option value="lowest">Lowest price first</option>
+            <option value="highest">Highest price first</option>
+          </select>
+        </div>
+        <div class="nav-buttons">
+          <p>Filter by Categories:</p>
+          <button id="electronics">electronics</button>
+          <button id="jewelery">jewelery</button>
+          <button id="mens-clothing">men's clothing</button>
+          <button id="womens-clothing">women's clothing</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="product-display" ></section>
+    </main>
+    <script type="module" src="/src/fakestore.ts"></script>
+  </body>
+</html>

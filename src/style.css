@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(222, 91, 35);
+    margin: 2rem;
+}
+
+nav {
+    background-color: rgb(222, 91, 35);
+    padding: 2rem 8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    align-self: center;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.search > input, .search > select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-buttons > p {
+    color: white;
+    font-size: 1rem;
+}
+
+.nav-buttons > button {
+    border: 2px solid white;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+}
+
+body {
+    background-color: rgb(237, 236, 236);
+}
+
+#product-display {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.picture {
+    height: 300px;
+    width: 200px;
+    margin-bottom: 1rem;
+    object-fit:contain;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: green;
+    font-size: 1.5rem;
+}
+.price-and-button-div {
+    padding-top: 1.5rem;
+    border-top: 3px solid rgb(241, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.add-to-cart {
+    border: none;
+    background-color: rgb(222, 91, 35);
+    border-radius: 5px;
+    padding: 0.5rem;
+    color: white;
+}
