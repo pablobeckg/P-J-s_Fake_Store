@@ -4,16 +4,43 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.logo {
+    background-image: url('./images/Bildschirmfoto_2024-06-20_um_13.54.41.png');
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain ;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+.dark-mode {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    margin: 2rem;
+    position:fixed;
+    border-radius: 5px;
+    z-index: 1;
+}
 
 h1 {
     text-align: center;
-    color: rgb(222, 91, 35);
+    color: #de5b23;
     margin: 2rem;
 }
 
 nav {
     background-color: rgb(222, 91, 35);
-    padding: 2rem 8rem;
+    padding: 2rem 6rem;
     display: flex;
     flex-direction: column;
 }
@@ -30,6 +57,7 @@ a {
 }
 
 .search > input, .search > select {
+    color: gray;
     padding: 0.5rem;
     border: none;
     border-radius: 5px;
@@ -39,6 +67,10 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 800px;
+    align-self: center;
+    gap: 0.8rem;
+    
 }
 
 .nav-buttons > p {
@@ -52,20 +84,41 @@ a {
     padding: 0.5rem;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    width: 140px;
+}
+
+.nav-buttons > button:hover {
+    background-color: rgb(203, 142, 27);
+    scale: 1.05;
+}
+
+#loading {
+    margin: 0 auto;
+    display: none;
+    width: 100px;
+    height: 100px;
+    border: 12px solid  #5d3ede;
+    border-top: 12px solid #00ecaa;
+    border-radius: 50%;
+    animation: spin 1.0s linear infinite, move 1.0s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 body {
-    background-color: rgb(237, 236, 236);
+    background-color: #efefee;
 }
 
 #product-display {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100vw;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    row-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 2rem ; 
 }
 
 .product-container {
@@ -75,14 +128,23 @@ body {
     align-items: center;
     background-color: white;
     padding: 1rem;
-    width: 30vw;
-    height: calc(30vw*3/2);
+    height: 450px;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
 }
+
 
 .picture {
     margin-bottom: 1rem;
-    max-width: 30vw;
-    max-height: calc(30vw/2);
+    max-width: 100%;
+    max-height: 50%;
+    object-fit: contain;
+    transition: all 0.3s linear;
+}
+
+.picture:hover {
+    scale: 1.05;
 }
 
 
@@ -96,11 +158,14 @@ h2 {
     font-size: 1.5rem;
 }
 .price-and-button-div {
-    padding-top: 1.5rem;
-    border-top: 3px solid rgb(241, 241, 241);
+    padding: 1.5rem;
+    border-top: 3px solid #f1f1f1;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .add-to-cart {
@@ -111,32 +176,70 @@ h2 {
     color: white;
 }
 
-@media screen and (max-width: 500px) {
+.add-to-cart:hover {
+    cursor: pointer;
+    background-color: #31876f;
+}
+
+@media screen and (max-width: 700px) {
     #product-display {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+        margin: 2rem;
     }
 
-    .product-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    #mobile-menu {
+        display: block;
+        border: none;
+        height: 2rem;
         width: 200px;
-        background-color: white;
-        padding: 1rem;
+        margin: 0 auto;
+        border-radius: 5px;
+        color: gray;
     }
     
-    .picture {
+
+    .product-container {
+        max-width: 100%;
+        width: 100%;
         height: 300px;
-        width: 200px;
-        margin-bottom: 1rem;
-        object-fit:contain;
+    }
+
+    h2 {
+        color: green;
+        font-size: 1rem;
+    }
+
+    button {
+        scale: 0.8;
+    }
+
+
+    h3 {
+        font-size: 0.8rem;
+    }
+
+    .price-and-button-div {
+        padding: 0.5rem;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .dark-mode {
+        position: absolute;
+        width: 90px;
+        top: 0px;
+        margin-left: 0.2rem;
     }
 }
 
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 1024px) {
+audio {
+    position: absolute;
+    z-index: 1;
+    bottom:10rem;
+    width: 150px;
+    background-color: #f1f1f1;
 }

@@ -1,24 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Fake Store</title>
   </head>
   <body>
     <header>
-      <a href=""><h1>P&J's Fake Store</h1></a>
+      <a href=""><div class="logo"></div></a>
+      <button class="dark-mode">Dark Mode</button>
+      <audio controls>
+        <source
+          src="./src/silentwaves.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
       <nav>
         <div class="search">
-          <input id="search-field" type="text" placeholder="Search by title ">
+          <input id="search-field" type="text" placeholder="Search by title " />
           <select name="" id="sort-by">
             <option value="">Sort by</option>
             <option value="lowest">Lowest price first</option>
             <option value="highest">Highest price first</option>
           </select>
         </div>
+        <select name="" id="mobile-menu">
+          <option value="">Category</option>
+          <option value="electronics">Electronics</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="mens-clothing">Men's clothing</option>
+          <option value="womens-clothing">Women's clothing</option>
+        </select>
         <div class="nav-buttons">
           <p>Filter by Categories:</p>
           <button id="electronics">electronics</button>
@@ -29,7 +43,8 @@
       </nav>
     </header>
     <main>
-      <section id="product-display" ></section>
+      <section id="product-display"></section>
+      <div id="loading"></div>
     </main>
     <script type="module" src="/src/fakestore.ts"></script>
   </body>
